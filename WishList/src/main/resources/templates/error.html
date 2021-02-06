@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu"	layout:decorator="layout/main"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <title>WisList</title>
+
+</head>
+<body>
+
+<div layout:fragment="loginContent">
+	<div class="container">
+		   
+	    <article>
+	        <header>
+            <h1 th:text = "${error}">Ez itt a cím</h1> 
+        </header>
+    
+ 	    <section>
+            <p th:text = "${message}">Ez az üzenet</p>
+            <p th:text = "${path}">Ez az üzenet</p>
+            <p th:text = "${timestamp}">Ez az üzenet</p>
+            <p th:text = "${status}">Ez az üzenet</p>
+        </section>
+	        
+	    </article>
+	        
+	
+	</div>
+</div>
+</body>
+</html>

@@ -7,5 +7,7 @@ public interface UserService {
 	public User findByUsername(String username);
 	
 	public String getUsername();
+	
+	public String getRole();
 
 }

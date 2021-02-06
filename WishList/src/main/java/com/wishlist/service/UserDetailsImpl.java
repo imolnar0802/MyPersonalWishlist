@@ -32,7 +32,7 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public String getPassword() {
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        return encoder.encode(user.getPass());
+        return encoder.encode(this.user.getPass());
 	}
 
 	@Override

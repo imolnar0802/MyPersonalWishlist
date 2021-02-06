@@ -16,6 +16,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	private UserRepository userRepository;
 	private User user;
 	
+	@Autowired
+	public UserServiceImpl(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		this.user = findByUsername(username);
@@ -26,10 +31,15 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	}
 	
 	public User findByUsername(String username) {
-		return userRepository.findByUsername(username);
+		this.user = userRepository.findByUsername(username);
+		return user;
 	}
 
 	public String getUsername() {
 		return this.user.getUser_username();
+	}
+	
+	public String getRole() {
+		return this.user.getRole();
 	}
 }
