@@ -8,50 +8,40 @@
 	<title>WishList</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type='text/css' href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" type='text/css' href="css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" type='text/css' href="css/fontawesome.all.css" />
+	<link rel="stylesheet" type='text/css' href="css/login.css" />
 </head>
 <body>
-<header style="font-size:25px; color:#E3F2FD;">
-	<span style="font-size:25px; color:#E3F2FD;">Bejelentkezés</span>
-</header>
-	<div class="limiter">
-		<div class="container-login100" style="padding-top:0px;">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form" name="login" th:action="@{/login}" method="post">
-					<span class="login100-form-title p-b-26">
-						WishList
-					</span>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+				<form class="box" name="login" th:action="@{/login}" method="post">
+					<h1>Bejelentkezés</h1>
 					<div id="err" th:if="${param.error}" class="alert alert-danger" style="text-align:center;">Hibás felhasználónév és/vagy jelszó</div>
 					<div th:if="${param.logout}" class="alert alert-success" style="text-align:center;">Sikeresen kijelentkeztél</div>
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" id="username" name="username">
-						<span class="focus-input100" data-placeholder="Felhasználónév"></span>
+					<div>
+						<input type="text" id="username" name="username" placeholder="Felhasználónév">
 					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" id="password" name="password">
-						<span class="focus-input100" data-placeholder="Jelszó"></span>
+			
+					<div>
+						<span class="btn-show-pass"><i class="zmdi zmdi-eye"></i></span>
+						<input type="password" id="password" name="password" placeholder="Jelszó">
 					</div>
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn" type="submit">
-								Bejelentkezés
-							</button>
+					<div class="container-form-btn">
+						<div class="box-form-btn">
+							<input type="submit" value="Bejelentkezés">
 						</div>
 					</div>
-
 				</form>
 			</div>
-		</div>
-	</div>
-	
+        </div>
+    </div>
+</div>	
 	<script src="/js/jquery-3.5.1.min.js"></script>
 	<script src="/js/popper.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap/bootstrap.min.js"></script>
 
 </body>
 </html>

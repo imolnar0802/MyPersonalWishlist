@@ -5,7 +5,7 @@
 		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="UTF8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     	
@@ -57,12 +57,18 @@
 		  </form>
 		</nav>
 		
-		<main role="main" class="container">
-			<div class="starter-template">
-				<div layout:fragment="loginContent">
-				</div>
-			</div>
-		</main>
+		<article>
+	        <header>
+	            <h1 th:text="${error}">Ez itt a gond</h1> 
+	        </header>
+	    
+	 	    <section >
+	            <p th:text="${message}">Ez az üzenet.</p>
+	            <p th:text="${path}">Elérési út.</p>
+	            <p th:text="${status}">Státusz</p>
+	            <p th:text="${timestamp}">Időpont</p>
+	        </section>     
+   		</article>
 		
 		<div class="footer-nav">
 			<footer class="page-footer font-small blue">
@@ -70,9 +76,9 @@
 			</footer>
 		</div>
 		
-		<script src="../js/jquery-3.5.1.min.js"></script>
-		<script src="../js/popper.min.js"></script>
-		<script src="../js/bootstrap/bootstrap.min.js"></script>
+		<script src="/js/jquery-3.5.1.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap/bootstrap.min.js"></script>
 		
 	</body>
 </html>

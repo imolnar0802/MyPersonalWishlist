@@ -1,33 +1,81 @@
-<!DOCTYPE html>
-<html lang="hu"	layout:decorator="layout/main"
-      xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-
-    <title>WisList</title>
-
-</head>
-<body>
-
-<div layout:fragment="loginContent">
-	<div class="container">
-		   
-	    <article>
-	        <header>
-            <h1 th:text = "${error}">Ez itt a cím</h1> 
-        </header>
-    
- 	    <section>
-            <p th:text = "${message}">Ez az üzenet</p>
-            <p th:text = "${path}">Ez az üzenet</p>
-            <p th:text = "${timestamp}">Ez az üzenet</p>
-            <p th:text = "${status}">Ez az üzenet</p>
-        </section>
-	        
-	    </article>
-	        
+<!doctype html>
+<html lang="hu"
+		xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta charset="UTF8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	
+    	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    	<link rel="stylesheet" href="css/main.css">
 	
-	</div>
-</div>
-</body>
+	</head>
+	<body>
+	
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="#">Wishlist</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		    <ul class="navbar-nav">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="#">Kezdőlap <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Új lista készítése</a>
+		      </li>
+		      <li class="nav-item dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Barátaim listái
+		        </a>
+		        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="#">Gergő</a>
+		          <a class="dropdown-item" href="#">Anett</a>
+		          <a class="dropdown-item" href="#">Gabi</a>
+		        </div>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Korábbi listáim</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Értesítések</a>
+		      </li>
+		      <li class="nav-item">
+			  	<form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post" class="form-inline">
+			        <a class="nav-link" href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;">Kijelentkezés</a>
+		      	</form>
+		      </li>
+		    </ul>
+		  </div> 
+		  <form class="form-inline">
+		    <input class="form-control mr-sm-2" type="search" placeholder="Keresés" aria-label="Search">
+		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
+		  </form>
+		</nav>
+		
+		<article>
+	        <header>
+	            <h1 th:text="${error}">Ez itt a gond</h1> 
+	        </header>
+	    
+	 	    <section >
+	            <p th:text="${message}">Ez az üzenet.</p>
+	        </section>
+   	 	</article>
+		
+		<div class="footer-nav">
+			<footer class="page-footer font-small blue">
+				<div class="footer-copyright text-center py-3">MyWishListApp</div>
+			</footer>
+		</div>
+		
+		<script src="/js/jquery-3.5.1.min.js"></script>
+		<script src="/js/popper.min.js"></script>
+		<script src="/js/bootstrap/bootstrap.min.js"></script>
+		
+	</body>
 </html>

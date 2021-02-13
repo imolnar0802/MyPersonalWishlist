@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.WebRequest;
 
+@Controller
 public class ErrorPageController implements ErrorController {
 	
 	private static final String ERR_PATH = "/error";

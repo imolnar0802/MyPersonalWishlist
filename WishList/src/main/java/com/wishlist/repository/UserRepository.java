@@ -32,11 +32,11 @@ public class UserRepository {
 		try {
 			out = call.execute(paramMap);
 			
-			if (out != null) {
+			if ((String) out.get("out_user_username") != null) {
 				User user = new User();
 				user.setName((String) out.get("out_user_name"));
 				user.setEmail((String) out.get("out_email"));
-				user.setUser_username((String) out.get("out_user_username"));
+				user.setUser_username(username);
 				user.setPass((String) out.get("out_password"));
 				user.setRole((String) out.get("out_role"));
 				
@@ -46,6 +46,6 @@ public class UserRepository {
 			System.err.println("Hibás felhasználónév és/vagy jelszó!");
 		}
 			
-			return null;
+		return null;
 	}
 }
