@@ -9,5 +9,7 @@ public interface UserService {
 	public String getUsername();
 	
 	public String getRole();
+	
+	public void regNewUser(User user);
 
 }

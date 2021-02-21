@@ -26,6 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 			.authorizeRequests()
 				.antMatchers("/").hasAnyAuthority("USER","ADMIN")
+				.antMatchers("/auth/signup").permitAll()
+				.antMatchers("/reg").permitAll()
 				.antMatchers("/static/**").permitAll()
 				.antMatchers("/css/**").permitAll()
 				.antMatchers("/js/**").permitAll()
@@ -33,11 +35,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
-				.loginPage("/login")
-				.permitAll()
+				.loginPage("/login").permitAll()
 				.and()
 			.logout()
-				.logoutSuccessUrl("/login?logout")
-				.permitAll();
+				.logoutSuccessUrl("/login?logout").permitAll();
 	}
 }

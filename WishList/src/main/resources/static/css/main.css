@@ -1,4 +1,18 @@
-#footer {
+body {
+    margin: 0;
+    padding: 0;
+    font-family: comic-sans;
+    background: linear-gradient(to right, #e6e6ff, #80dfff)
+}
+
+h1 {
+    color: #000066;
+    font-family: comic-sans;
+    font-weight: 100;
+    font-size: 50px;
+}
+
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;

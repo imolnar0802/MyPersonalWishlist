@@ -42,4 +42,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 	public String getRole() {
 		return this.user.getRole();
 	}
+	
+	public void regNewUser(User user) {
+		userRepository.insertNewUser(user);
+	}
 }

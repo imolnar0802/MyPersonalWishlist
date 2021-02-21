@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: comic-sans;
-    background: linear-gradient(to right, #b92b27, #1565c0)
+    font-family: Eras ITC;
+    background: linear-gradient(to right, #0066cc, #80dfff)
 }
 
 .box {
@@ -11,11 +11,16 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    background: #191919;
-    ;
     text-align: center;
     transition: 0.25s;
     margin-top: 100px
+}
+
+.box span{
+	color: #ffffff;
+    font-family: Eras ITC;
+    font-weight: 250;
+    font-size: 20px;
 }
 
 .box input[type="text"],
@@ -25,7 +30,7 @@ body {
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #3498db;
+    border: 2px solid #0000e6;
     padding: 10px 10px;
     width: 250px;
     outline: none;
@@ -35,24 +40,26 @@ body {
 }
 
 .box h1 {
-    color: white;
-    text-transform: uppercase;
-    font-weight: 500
+    color: #000066;
+    font-family: Eras ITC;
+    font-weight: 100;
+    font-size: 50px;
 }
 
 .box input[type="text"]:focus,
 .box input[type="password"]:focus {
     width: 300px;
-    border-color: #2ecc71
+    border-color: #66c2ff
 }
 
-.box input[type="submit"] {
+.box input[type="submit"],
+.box input[type="button"] {
     border: 0;
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #2ecc71;
+    border: 2px solid #66c2ff;
     padding: 14px 40px;
     outline: none;
     color: white;
@@ -61,8 +68,9 @@ body {
     cursor: pointer
 }
 
-.box input[type="submit"]:hover {
-    background: #2ecc71
+.box input[type="submit"]:hover,
+.box input[type="button"]:hover {
+    background: #66c2ff
 }
 
 .forgot {

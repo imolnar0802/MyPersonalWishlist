@@ -2,6 +2,8 @@ package com.wishlist.repository;
 
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -16,6 +18,8 @@ public class UserRepository {
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	private Map<String, Object> out;
 	
@@ -43,9 +47,28 @@ public class UserRepository {
 				return user;
 			}
 		} catch (Exception e) {
-			System.err.println("Hibás felhasználónév és/vagy jelszó!");
+			log.error("Hibás felhasználónév és/vagy jelszó! - " + e);
 		}
 			
 		return null;
+	}
+	
+
+	public void insertNewUser(User user) {
+		
+		SimpleJdbcCall call = new SimpleJdbcCall(jdbcTemplate).withProcedureName("SET_USER");
+		
+		SqlParameterSource paramMap = new MapSqlParameterSource()
+				.addValue("in_username", user.getUser_username())
+				.addValue("in_name", user.getName())
+				.addValue("in_email", user.getEmail())
+				.addValue("in_password", user.getPass());
+		
+		try {
+			out = call.execute(paramMap);
+			log.info("Sikeres felhasználó regisztráció");
+		}catch(Exception e){
+			log.error("Sikertelen felhasználó regisztráció - " + e);
+		}
 	}
 }

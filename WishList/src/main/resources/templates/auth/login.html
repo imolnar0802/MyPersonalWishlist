@@ -5,7 +5,7 @@
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-	<title>WishList</title>
+	<title>MyWishListApp</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type='text/css' href="css/bootstrap/bootstrap.min.css" />
@@ -18,13 +18,11 @@
         <div class="col-md-6">
             <div class="card">
 				<form class="box" name="login" th:action="@{/login}" method="post">
-					<h1>Bejelentkezés</h1>
+					<h1>MyWishListApp</h1>
 					<div id="err" th:if="${param.error}" class="alert alert-danger" style="text-align:center;">Hibás felhasználónév és/vagy jelszó</div>
-					<div th:if="${param.logout}" class="alert alert-success" style="text-align:center;">Sikeresen kijelentkeztél</div>
 					<div>
 						<input type="text" id="username" name="username" placeholder="Felhasználónév">
 					</div>
-			
 					<div>
 						<span class="btn-show-pass"><i class="zmdi zmdi-eye"></i></span>
 						<input type="password" id="password" name="password" placeholder="Jelszó">
@@ -33,6 +31,7 @@
 						<div class="box-form-btn">
 							<input type="submit" value="Bejelentkezés">
 						</div>
+						Nem vagy még tag? <a href="/auth/signup">Itt regisztrálhatsz!</a>
 					</div>
 				</form>
 			</div>
@@ -42,6 +41,5 @@
 	<script src="/js/jquery-3.5.1.min.js"></script>
 	<script src="/js/popper.min.js"></script>
 	<script src="/js/bootstrap/bootstrap.min.js"></script>
-
 </body>
 </html>
