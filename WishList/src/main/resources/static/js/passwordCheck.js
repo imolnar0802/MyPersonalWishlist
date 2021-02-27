@@ -19,7 +19,7 @@ $( document ).ready(function(){
 		var upperCaseLetters = /[A-Z]/g;
 		var numbers = /[0-9]/g;
 		
-		if(field.value.match(lowerCaseLetters)) {
+		/*if(field.value.match(lowerCaseLetters)) {
 			$("letter").removeClass("fas fa-minus-circle");
 		    $("letter").addClass("fas fa-check-circle");
 		} else {
@@ -49,6 +49,6 @@ $( document ).ready(function(){
 		} else {
 		    length.classList.remove("valid");
 		    length.classList.add("invalid");
-		}
+		}*/
 	}
 });
