@@ -8,9 +8,8 @@
 	<title>MyWishListApp</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type='text/css' href="../css/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" type='text/css' href="../css/fontawesome.all.css" />
-	<link rel="stylesheet" type='text/css' href="../css/login.css" />
+	<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/login.css" />
 </head>
 <body>
 <div class="container">
@@ -20,20 +19,26 @@
             	<form class="box" name="signup" th:action="@{/reg}" th:object="${user}" method="post">
             		<div>
             			<span>Név:</span>
-						<input type="text" id="name" name="name" th:field="*{name}" placeholder="Név">
+						<input type="text" id="name" name="name" th:field="*{name}" placeholder="Név" required>
 					</div>
             		<div>
             			<span>Felhasználónév:</span>
-						<input type="text" id="username" name="username" th:field="*{user_username}" placeholder="Felhasználónév">
+						<input type="text" id="username" name="username" th:field="*{user_username}" placeholder="Felhasználónév" required>
 					</div>
 					<div>
 						<span>E-mail cím:</span>
-						<input type="text" id="email" name="email" th:field="*{email}" placeholder="E-mail cím">
+						<input type="text" id="email" name="email" th:field="*{email}" placeholder="E-mail cím" required>
 					</div>
 					<div>
 						<span>Jelszó:</span>
 						<span class="btn-show-pass"><i class="zmdi zmdi-eye"></i></span>
-						<input type="password" id="password" name="password" th:field="*{pass}" placeholder="Jelszó">
+						<input type="password" id="pass" name="password" th:field="*{pass}" placeholder="Jelszó" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+						<div id="message" style="display: none;">
+							<span id="letter">Tartalmaz kis betűt</span><br />
+							<span id="capital">Tartalmaz Nagy betűt</span><br />
+							<span id="number">Tartalmaz számot</span><br />
+							<span id="length">Minimum 8 karakter</span><br />
+						</div>
 					</div>
 					<div class="container-form-btn">
 						<div class="box-form-btn">
@@ -44,9 +49,10 @@
 			</div>
         </div>
     </div>
-</div>	
+</div>
 	<script src="../js/jquery-3.5.1.min.js"></script>
 	<script src="../js/popper.min.js"></script>
+	<script src="../js/passwordCheck.js"></script>
 	<script src="../js/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
