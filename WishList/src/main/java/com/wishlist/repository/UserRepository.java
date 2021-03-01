@@ -1,5 +1,6 @@
 package com.wishlist.repository;
 
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
+import com.wishlist.entity.Friends;
 import com.wishlist.entity.User;
 
 @Repository
@@ -70,5 +72,24 @@ public class UserRepository {
 		}catch(Exception e){
 			log.error("Sikertelen felhasználó regisztráció - " + e);
 		}
+	}
+	
+	public List<Friends> getAllFriends(String username){
+		
+		 String sql = "call GET_ALL_FRIENDS('"+username+"')";
+		 try {
+	        return jdbcTemplate.query(
+	                sql,
+	                (rs, rowNum) ->
+	                        new Friends(
+	                                rs.getString("name"),
+	                                rs.getString("username"),
+	                                rs.getString("email")
+	                        )
+	        );
+		 }catch(Exception e) {
+			 log.error("Sikertelen a barátok lekérdezése - " + e);
+		 }
+		 return null;
 	}
 }

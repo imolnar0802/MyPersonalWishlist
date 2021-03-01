@@ -7,10 +7,10 @@ public class User {
 	private String email;
 	private String pass;
 	private String role;
+	private Friends friends;
 	
 	public User() {}
 	
-
 	public String getUser_username() {
 		return user_username;
 	}
@@ -46,6 +46,14 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public Friends getFriends() {
+		return friends;
+	}
+
+	public void setFriends(Friends friends) {
+		this.friends = friends;
 	}
 
 	@Override

@@ -7,7 +7,7 @@
 <head>
 	<title>MyWishListApp</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css" />
 	<link rel="stylesheet" href="../css/login.css" />
 </head>
@@ -34,10 +34,16 @@
 						<input type="password" id="pass" name="password" th:field="*{pass}" placeholder="Jelszó" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
 						<span class="btn-show-pass"><i class="zmdi zmdi-eye"></i></span>
 						<div id="message" style="display: none;">
-							<p id="letter" style="color:red;">Tartalmaz kis betűt</p><br />
-							<p id="capital" style="color:red;">Tartalmaz nagy betűt</p><br />
-							<p id="number" style="color:red;">Tartalmaz számot</p><br />
-							<p id="length" style="color:red;">Minimum 8 karakter</p><br />
+							<div class="row">
+								<div class="col-md-6">
+									<p id="letter" style="color:red;">Tartalmaz kis betűt</p><br />
+									<p id="capital" style="color:red;">Tartalmaz nagy betűt</p>
+								</div>
+								<div class="col-md-6">
+									<p id="number" style="color:red;">Tartalmaz számot</p><br />
+									<p id="length" style="color:red;">Minimum 8 karakter</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="container-form-btn">
