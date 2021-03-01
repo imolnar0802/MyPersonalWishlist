@@ -19,36 +19,28 @@ $( document ).ready(function(){
 		var upperCaseLetters = /[A-Z]/g;
 		var numbers = /[0-9]/g;
 		
-		/*if(field.value.match(lowerCaseLetters)) {
-			$("letter").removeClass("fas fa-minus-circle");
-		    $("letter").addClass("fas fa-check-circle");
+		if(field.value.match(lowerCaseLetters)) {
+			letter.style.color = "green";
 		} else {
-			$("letter").removeClass("fas fa-check-circle");
-			$("letter").addClass("fas fa-minus-circle");
+			letter.style.color = "red";
 		}
 		
 		if(field.value.match(upperCaseLetters)) {
-		    capital.classList.remove("invalid");
-		    capital.classList.add("valid");
+		    capital.style.color = "green";
 		} else {
-		    capital.classList.remove("valid");
-		    capital.classList.add("invalid");
+		    capital.style.color = "red";
 		}
 		
 		if(field.value.match(numbers)) {
-		    number.classList.remove("invalid");
-		    number.classList.add("valid");
+		    number.style.color = "green";
 		} else {
-		    number.classList.remove("valid");
-		    number.classList.add("invalid");
+		    number.style.color = "red";
 		}
 		
 		if(field.value.length >= 8) {
-		    length.classList.remove("invalid");
-		    length.classList.add("valid");
+		    length.style.color = "green";
 		} else {
-		    length.classList.remove("valid");
-		    length.classList.add("invalid");
-		}*/
+		    length.style.color = "red";
+		}
 	}
 });

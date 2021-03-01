@@ -31,18 +31,19 @@
 					</div>
 					<div>
 						<span>Jelszó:</span>
-						<span class="btn-show-pass"><i class="zmdi zmdi-eye"></i></span>
 						<input type="password" id="pass" name="password" th:field="*{pass}" placeholder="Jelszó" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+						<span class="btn-show-pass"><i class="zmdi zmdi-eye"></i></span>
 						<div id="message" style="display: none;">
-							<span id="letter">Tartalmaz kis betűt</span><br />
-							<span id="capital">Tartalmaz Nagy betűt</span><br />
-							<span id="number">Tartalmaz számot</span><br />
-							<span id="length">Minimum 8 karakter</span><br />
+							<p id="letter" style="color:red;">Tartalmaz kis betűt</p><br />
+							<p id="capital" style="color:red;">Tartalmaz nagy betűt</p><br />
+							<p id="number" style="color:red;">Tartalmaz számot</p><br />
+							<p id="length" style="color:red;">Minimum 8 karakter</p><br />
 						</div>
 					</div>
 					<div class="container-form-btn">
 						<div class="box-form-btn">
 							<input type="submit" value="Regisztráció">
+							<input type="button" onclick="location.href='/';" value="Vissza" />
 						</div>
 					</div>
             	</form>
@@ -53,6 +54,7 @@
 	<script src="../js/jquery-3.5.1.min.js"></script>
 	<script src="../js/popper.min.js"></script>
 	<script src="../js/passwordCheck.js"></script>
+	<script src="../js/iconify.js"></script>
 	<script src="../js/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>

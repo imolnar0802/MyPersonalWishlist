@@ -2,7 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: Eras ITC;
-    background: linear-gradient(to right, #0066cc, #80dfff)
+    background: linear-gradient(to right, #e6e6ff, #80dfff);
+}
+
+p{
+	margin: 0px;
+    padding: 0px;
 }
 
 .box {
@@ -17,7 +22,7 @@ body {
 }
 
 .box span{
-	color: #ffffff;
+	color: #000066;
     font-family: Eras ITC;
     font-weight: 250;
     font-size: 20px;
@@ -34,7 +39,7 @@ body {
     padding: 10px 10px;
     width: 250px;
     outline: none;
-    color: white;
+    color: #000066;
     border-radius: 24px;
     transition: 0.25s
 }
@@ -62,7 +67,7 @@ body {
     border: 2px solid #66c2ff;
     padding: 14px 40px;
     outline: none;
-    color: white;
+    color: #000066;
     border-radius: 24px;
     transition: 0.25s;
     cursor: pointer
@@ -70,9 +75,9 @@ body {
 
 .box input[type="submit"]:hover,
 .box input[type="button"]:hover {
-    background: #66c2ff
+    background: #66c2ff;
 }
 
 .forgot {
-    text-decoration: underline
+    text-decoration: underline;
 }
